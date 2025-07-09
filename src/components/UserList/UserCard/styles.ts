@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 24px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  align-items: flex-start;
+  @media (max-width: 600px) {
+    padding: 14px 8px;
+    font-size: 15px;
+  }
 `;
 
 export const Name = styled.div`
@@ -37,16 +40,21 @@ export const Created = styled.div`
 `;
 
 export const DetailsButton = styled.button`
-  background: #1976d2;
-  color: #fff;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
   border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-size: 0.95rem;
+  background: #007bff;
+  color: #fff;
+  font-weight: 500;
   cursor: pointer;
-  margin-top: 8px;
   transition: background 0.2s;
   &:hover {
-    background: #1565c0;
+    background: #0056b3;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
   }
 `; 

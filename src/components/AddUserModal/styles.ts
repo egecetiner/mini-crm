@@ -2,11 +2,8 @@ import styled from 'styled-components';
 
 export const ModalOverlay = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.2);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,14 +12,19 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
-  padding: 32px 24px;
+  border-radius: 12px;
+  padding: 32px 28px;
   min-width: 340px;
   max-width: 95vw;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  @media (max-width: 600px) {
+    min-width: unset;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding: 18px 6px;
+    max-width: 100vw;
+  }
 `;
 
 export const Title = styled.h2`
@@ -61,22 +63,31 @@ export const Checkbox = styled.input`
 
 export const Actions = styled.div`
   display: flex;
-  justify-content: flex-end;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 18px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 8px;
+  }
 `;
 
 export const Button = styled.button`
-  background: #1976d2;
-  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
   border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 1rem;
+  background: #007bff;
+  color: #fff;
+  font-weight: 500;
   cursor: pointer;
+  font-size: 1rem;
   transition: background 0.2s;
   &:hover {
-    background: #1565c0;
+    background: #0056b3;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.08rem;
   }
 `;
 

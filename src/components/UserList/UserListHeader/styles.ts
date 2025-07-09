@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
-  width: 100%;
-  max-width: 900px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
   margin-bottom: 24px;
-  gap: 16px;
+  @media (max-width: 600px) {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
 `;
 
 export const Button = styled.button`
@@ -41,9 +42,12 @@ export const Toggle = styled.button`
 `;
 
 export const SearchInput = styled.input`
-  padding: 8px 12px;
+  padding: 8px 14px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 4px;
   font-size: 1rem;
-  width: 260px;
+  @media (max-width: 600px) {
+    padding: 6px 8px;
+    font-size: 0.95rem;
+  }
 `; 
